@@ -1,0 +1,21 @@
+Thank you for your request. Here is a detailed detection guidance for T1613 - Container and Resource Discovery Platform: Containers.
+
+Key indicators and observables:
+- Adversaries may attempt to discover containers and other resources that are available within a container environment, such as the Kubernetes dashboard or can be queried via the Docker and Kubernetes APIs.(Citation: Docker API)(Citation: Kubernetes API) In Docker, logs may leak information about the environment, such as the environment’s configuration, which services are available, and what cloud provider the victim may be utilizing.
+- The discovery of these resources may inform an adversary’s next steps in the environment, such as how to perform lateral movement and which methods to utilize for execution.
+
+Log sources and data requirements:
+- The logs from the Kubernetes dashboard or other monitoring tools used by a container administrator can indicate if containers are running within a cluster or not. Logs may also provide information about the environment’s configuration, such as which services are available, and what cloud provider is being utilized.
+- Logs from Docker or Kubernetes APIs may reveal if an adversary has successfully discovered any containers or other resources in the environment.
+
+Detection rules and signatures:
+- Adversaries attempting to discover containers or other resources within a container environment will often attempt to exploit vulnerabilities, such as those found in the Kubernetes dashboard or Docker APIs. These vulnerabilities can be identified through various detection techniques, including signature-based analysis of log data and behavioral monitoring.
+- For example, an adversary attempting to discover containers may use a command like "docker ps" which will list all running containers on the system. A variation of this command could be used to identify if any containers are running with specific labels or metadata attributes.
+- Adversaries may also attempt to brute force their way into containers, such as by using the "-u", "-m", and "-l" flags to specify a user, memory limit, and CPU limit for the container. This behavior can be detected through signature-based analysis of log data or behavioral monitoring.
+Monitoring strategies:
+- Monitoring the Kubernetes dashboard or other monitoring tools used by a container administrator may reveal if containers are running within a cluster. Logs from these sources can also provide information about the environment’s configuration, such as which services are available, and what cloud provider is being utilized.
+- Docker logs can be monitored for suspicious activity, such as attempts to discover containers or other resources in the environment. Adversaries may also attempt to brute force their way into containers, such as by using the "-u", "-m", and "-l" flags to specify a user, memory limit, and CPU limit for the container. This behavior can be detected through signature-based analysis of log data or behavioral monitoring.
+False positive considerations:
+- False positives may occur when monitoring logs from the Kubernetes dashboard or other monitoring tools used by a container administrator. These logs can provide information about the environment’s configuration, such as which services are available and what cloud provider is being utilized. However, these false positives should be investigated to determine if they are part of normal behavior or not.
+- False positives may also occur when monitoring Docker or Kubernetes APIs for suspicious activity. Adversaries attempting to discover containers or other resources within a container environment will often attempt to exploit vulnerabilities found in the dashboard, API, and other tools used by an administrator. However, these false positives should be investigated to determine if they are part of normal behavior or not.
+- Adversaries may also attempt to brute force their way into containers, such as by using the "-u", "-m", and "-l" flags to specify a user, memory limit, and CPU limit for the container. This behavior can be detected through signature-based analysis of log data or behavioral monitoring. However, false positives may occur when attempting to brute force into containers due to the large number of combinations required.

@@ -1,0 +1,95 @@
+# Content Generation Templates
+# Templates for generating different types of security research content
+
+mitre_technique:
+  description:
+    template: |
+      # {technique_id} - {technique_name}
+      
+      ## Overview
+      {description}
+      
+      ## Platforms
+      {platforms}
+      
+      ## Detection Data Sources
+      {data_sources}
+      
+      ## Mitigations
+      {mitigations}
+  
+  agent_notes:
+    template: |
+      # {technique_id} - {technique_name}
+      
+      ## Executive Summary
+      {summary}
+      
+      ## Real-World Examples
+      {examples}
+      
+      ## Emulation Steps
+      {emulation}
+      
+      ## Detection Guidance
+      {detection}
+      
+      ## Mitigation Strategies
+      {mitigation}
+      
+      ## References
+      {references}
+  
+  detection:
+    template: |
+      # Detection Guidance for {technique_id}
+      
+      ## Key Indicators
+      {indicators}
+      
+      ## Log Sources
+      {log_sources}
+      
+      ## Detection Rules
+      {rules}
+      
+      ## False Positive Considerations
+      {false_positives}
+  
+  mitigation:
+    template: |
+      # Mitigation Strategies for {technique_id}
+      
+      ## Prevention
+      {prevention}
+      
+      ## Configuration Recommendations
+      {configuration}
+      
+      ## Monitoring
+      {monitoring}
+      
+      ## Response Procedures
+      {response}
+  
+  purple_playbook:
+    template: |
+      # Purple Team Playbook: {technique_id}
+      
+      ## Preparation
+      {preparation}
+      
+      ## Attack Simulation
+      {attack_simulation}
+      
+      ## Detection Validation
+      {detection_validation}
+      
+      ## Response Testing
+      {response_testing}
+      
+      ## Metrics and Success Criteria
+      {metrics}
+      
+      ## Lessons Learned
+      {lessons_learned}

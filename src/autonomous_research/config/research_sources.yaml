@@ -1,0 +1,40 @@
+# Research Sources Configuration
+# Configure external sources for academic papers, news, and threat intelligence
+
+academic_sources:
+  arxiv:
+    enabled: true
+    api_url: "http://export.arxiv.org/api/query"
+    max_results: 10
+    categories: ["cs.CR", "cs.AI", "cs.LO"]
+  
+  ieee_xplore:
+    enabled: true
+    api_url: "https://ieeexploreapi.ieee.org/api/v1/search/articles"
+    api_key: "${IEEE_API_KEY}"
+    max_results: 10
+  
+  google_scholar:
+    enabled: false  # Disabled by default to avoid captcha/429 blocking
+    max_results: 10
+    rate_limit: 5  # seconds between requests
+
+news_sources:
+  risky_business:
+    enabled: true
+    feeds:
+      - "https://risky.biz/feeds/risky-business"
+      - "https://risky.biz/feeds/risky-business-news"
+      - "https://risky.biz/rss.xml"
+  
+  security_news:
+    enabled: true
+    feeds:
+      - "https://feeds.feedburner.com/TheHackersNews"
+      - "https://www.bleepingcomputer.com/feed/"
+      - "https://feeds.feedburner.com/Securityweek"
+
+github_sources:
+  enabled: true
+  search_terms: ["security", "vulnerability", "exploit", "malware"]
+  max_results: 20
